@@ -1,0 +1,51 @@
+//$navbar-color: #6f0000;
+//
+//header {
+//
+//  background: #AA076B;  /* fallback for old browsers */
+//  background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+//  background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//
+//
+//  .logo {
+//    text-decoration: none;
+//    font-weight: bold;
+//  }
+//
+//  nav {
+//    justify-self: right;
+//
+//    ul {
+//      list-style-type: none;
+//      margin: 0;
+//      padding: 0;
+//
+//      li {
+//        float: left;
+//
+//        a {
+//          padding: 1.5em;
+//          text-transform: uppercase;
+//          font-size: .8em;
+//
+//          &:hover {
+//            text-decoration: none;
+//            background: #aa076b;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//
+
+.menu-avatar {
+  height: 35px !important;
+}
+
+.red.lighten-5 {
+  background: #AA076B !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #61045F, #AA076B) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #61045F, #AA076B) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

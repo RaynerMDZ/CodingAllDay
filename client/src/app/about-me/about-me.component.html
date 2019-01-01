@@ -1,0 +1,31 @@
+<mdb-card>
+  <!--Card image-->
+  <mdb-card-img [src]="profile.avatarImg" alt="Card image cap"></mdb-card-img>
+  <!--Card content-->
+  <mdb-card-body>
+
+    <!--Title-->
+    <mdb-card-title>
+      <h4>About Me</h4>
+    </mdb-card-title>
+
+    <!--Text-->
+    <mdb-card-text>
+
+
+
+      {{ profile.fistName }}
+      {{ profile.lastName }}
+
+      {{ profile.bio }}
+
+      {{ profile.country }}
+
+      {{ profile.dateOfBirth }}
+
+
+    </mdb-card-text>
+
+    <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+  </mdb-card-body>
+</mdb-card>

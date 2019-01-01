@@ -1,0 +1,65 @@
+
+<!--<header>-->
+  <!--<div class="container">-->
+    <!--<a routerLink="/" class="logo">{{webTitle}}</a>-->
+    <!--<nav>-->
+      <!--<ul>-->
+        <!--<li><a routerLink="profile">Profile</a></li>-->
+        <!--<li><a routerLink="settings">Settings</a></li>-->
+      <!--</ul>-->
+    <!--</nav>-->
+  <!--</div>-->
+<!--</header>-->
+
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark purple fixed-top">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink="/">{{webTitle}}</a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+    </ul>
+    <span class="navbar-text white-text">
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+
+         <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="createPost" *ngIf="isLoggedIn">Create Post</a>
+         </li>
+
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="aboutMe">About Me</a>
+        </li>
+
+        <!--<li class="nav-item">-->
+          <!--<a class="nav-link waves-light" mdbWavesEffect routerLink="contactMe">Contact Me</a>-->
+        <!--</li>-->
+
+        <li class="nav-item">
+          <a *ngIf="!isLoggedIn" class="nav-link waves-light" mdbWavesEffect routerLink="login">Login</a>
+          <a *ngIf="isLoggedIn" class="nav-link waves-light" mdbWavesEffect (click)="logout()">Logout</a>
+        </li>
+
+          <!--<li class="nav-item dropdown" dropdown>-->
+            <!--<a mdbWavesEffect-->
+               <!--dropdownToggle-->
+               <!--class="nav-link waves-light"-->
+               <!--data-toggle="dropdown"-->
+               <!--aria-haspopup="true"-->
+               <!--aria-expanded="false">-->
+              <!--<i class="fa fa-bars custom-menu" aria-hidden="true"></i>-->
+            <!--</a>-->
+            <!--<div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-unique" aria-labelledby="navbarDropdownMenuLink">-->
+              <!--<a mdbWavesEffect class="dropdown-item waves-light" routerLink="createPost">Create Post</a>-->
+              <!--<a mdbWavesEffect class="dropdown-item waves-light" routerLink="logout">Logout</a>-->
+            <!--</div>-->
+
+          <!--</li>-->
+        </ul>
+    </span>
+  </links>
+</mdb-navbar>
+<!--/.Navbar-->
+

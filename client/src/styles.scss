@@ -1,0 +1,103 @@
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+//
+//body, html {
+//  height: 100%;
+//  margin: 0 auto;
+//}
+//
+//body {
+//  font-family: "Roboto", sans-serif;
+//  font-size: 18px;
+//}
+//
+//a {
+//  text-decoration: none;
+//}
+//
+//.container {
+//  width: 80%;
+//  margin: 0 auto;
+//  padding: 1.3em;
+//  display: grid;
+//  grid-template-columns: 30% auto;
+//
+//  a {
+//    color: white;
+//  }
+//}
+//
+//section {
+//  width: 80%;
+//  margin: 0 auto;
+//  padding: 2em;
+//}
+
+body {
+  font-family: Roboto,sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.card {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.custom-margin {
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
+}
+
+.custom-shadow {
+  -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+
+.pb-3, .py-3 {
+  padding-bottom: 1rem !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.dark-grey-text, .dark-grey-text:focus, .dark-grey-text:hover {
+  color: #4f4f4f !important;
+}
+
+.posted-font {
+  font-size: 0.91em;
+}
+
+.homepage-posts mdb-card:nth-child(1) {
+  margin-top: 5em !important;
+}
+
+
+@media (min-width: 991px) {
+  .homepage-posts mdb-card:nth-child(1) {
+    margin-top: 6em !important;
+  }
+}
+
+.custom-menu {
+  font-size: 1.3em;
+}
+
+.custom-padding-post {
+  padding-top: 4.5em;
+}
+
+.contact-me-padding {
+
+  padding: 10em 15em 7em;
+}
+
+.login-padding {
+  height: 94.5vh;
+  padding-top: 19em;
+  padding-left: 10em;
+  padding-right: 10em;
+}

@@ -1,0 +1,17 @@
+<div class="container login-padding">
+
+  <!-- Name -->
+  <input type="text" [(ngModel)]="username" mdbInputDirective
+         class="form-control mb-4" placeholder="Username">
+
+  <!-- Email -->
+  <input type="password" [(ngModel)]="password" mdbInputDirective
+         class="form-control mb-4" placeholder="Password">
+
+  <!-- Send button -->
+  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+          mdbWavesEffect type="submit" (click)="doLogin()" [disabled]="disabledSubmitButton">Login</button>
+
+</div>
+
+

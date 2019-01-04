@@ -13,10 +13,14 @@ spring.datasource.username = ***************
 spring.datasource.password = ***************
 
 `Hibernate Properties`
-#### spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
-#### spring.jpa.database-platform = org.hibernate.dialect.MySQL57Dialect
-#### spring.jpa.show-sql = true
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+
+spring.jpa.database-platform = org.hibernate.dialect.MySQL57Dialect
+
+spring.jpa.show-sql = true
 
 `Hibernate ddl auto=update will automatically create the tables`
-#### spring.jpa.hibernate.ddl-auto = update
+
+spring.jpa.hibernate.ddl-auto = update
 

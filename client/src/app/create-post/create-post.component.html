@@ -10,17 +10,17 @@
       <!-- Name -->
       <input type="text" [(ngModel)]="title" class="form-control mb-4" placeholder="Title">
 
-      <!-- Email -->
+      <!-- Featured picture -->
       <input type="email" [(ngModel)]="featurePhoto" class="form-control mb-4" placeholder="Featured picture">
 
-      <!-- Message -->
+      <!-- Body -->
       <div class="form-group">
         <app-ngx-editor [config]="editorConfig" [(ngModel)]="body"></app-ngx-editor>
         <!--<textarea class="form-control rounded-0" [(ngModel)]="body" rows="3" placeholder="Content"></textarea>-->
       </div>
 
-      <!-- Send button -->
-      <button class="btn btn-info btn-block" type="submit" (click)="createPost()">Create</button>
+      <!-- Create button -->
+      <button class="btn btn-info btn-block default-color" type="submit" (click)="createPost()">Create</button>
 
     </div>
     <!-- Default form contact -->

@@ -53,8 +53,8 @@
       </div>
 
 
-      <!-- Send button -->
-      <button [disabled]="!body" class="btn btn-info btn-block" (click)="createComment()" type="submit">Comment</button>
+      <!-- Create button -->
+      <button [disabled]="!body" class="btn btn-info btn-block default-color" (click)="createComment()" type="submit">Comment</button>
 
     </div>
     <!-- Default form contact -->
@@ -93,10 +93,13 @@
           {{ comment?.body }}
         </mdb-card-text>
 
-        <button mdbBtn type="button" color="primary" mdbWavesEffect (click)="deleteComment(comment?.id)" *ngIf="isLoggedIn">Delete</button>
+        <!--<button mdbBtn type="button" color="primary" mdbWavesEffect (click)="deleteComment(comment?.id)" *ngIf="isLoggedIn">Delete</button>-->
 
         <div class="col-md-6 col-sm-6 col-6">
-          <i class="fa fa-clock-o" aria-hidden="true"></i><span class="posted-font">&nbsp;Posted {{ utils.formatDate(comment?.date) }}</span>
+
+          <i class="fa fa-remove" aria-hidden="true" (click)="deleteComment(comment?.id)" *ngIf="isLoggedIn"></i>
+
+          <i class="fa fa-clock-o delete-position" aria-hidden="true"></i><span class="posted-font">&nbsp;Posted {{ utils.formatDate(comment?.date) }}</span>
         </div>
 
       </mdb-card-body>

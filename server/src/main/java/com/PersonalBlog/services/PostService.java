@@ -18,7 +18,7 @@ import java.util.Date;
 import static com.PersonalBlog.utils.Util.*;
 
 /**
- *
+ * This class contains all restful services Posts.
  */
 @RestController
 public class PostService {
@@ -30,9 +30,10 @@ public class PostService {
     UserRepository userRepository;
 
     /**
-     *
+     * This method creates a post based on the data sent through the frontend.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/createPost")
@@ -65,9 +66,10 @@ public class PostService {
     }
 
     /**
-     *
+     * This method edits a post based on the data provided on the frontend.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/editPost")
@@ -92,9 +94,10 @@ public class PostService {
 
 
     /**
-     *
+     * This parameter deletes a post based on its id.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/deletePost")
@@ -117,9 +120,10 @@ public class PostService {
     }
 
     /**
-     *
+     * This method get a post based on its id from the database.
      * @param id
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/getPost/{id}")
@@ -139,10 +143,11 @@ public class PostService {
     }
 
     /**
-     *
+     * This method takes a number "limit" and a number "pages" to get all post that will be displayed per page.
      * @param limit
      * @param page
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/getPosts")

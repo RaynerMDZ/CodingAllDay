@@ -22,9 +22,10 @@ public class ProfileService {
     ProfileRepository profileRepository;
 
     /**
-     *
+     * This method creates a profile based on the data sent through the frontend.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/createProfile")
@@ -55,9 +56,10 @@ public class ProfileService {
     }
 
     /**
-     *
+     * This method gets a profile based on its id.
      * @param id
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/getProfile/{id}")

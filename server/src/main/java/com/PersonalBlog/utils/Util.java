@@ -51,7 +51,7 @@ public class Util {
     }
 
     /**
-     *
+     * Looks for an user inside the database that matches with the data provided by a json file.
      * @param objectNode
      * @param userRepository
      * @return long
@@ -64,5 +64,4 @@ public class Util {
 
         return findUser(username, password, userRepository);
     }
-
 }

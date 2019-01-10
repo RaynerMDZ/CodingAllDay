@@ -24,9 +24,11 @@ public class UserService {
     UserRepository userRepository;
 
     /**
-     *
+     * This method checks if a user exists in the database. If that user exits and the credentials sent in the frontend
+     * matches with the data in the database, then this method perform a login in the website.
      * @param user
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/login")
@@ -49,9 +51,10 @@ public class UserService {
     }
 
     /**
-     *
+     * This method creates a user if the user that is creating a new user is a "admin" user.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/createUser")
@@ -89,9 +92,10 @@ public class UserService {
     }
 
     /**
-     *
+     * This method deletes a user if the user that is trying to delete it is an "admin" user.
      * @param objectNode
-     * @return
+     * @return ResponseEntity
+     * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping(value="/deleteUser")

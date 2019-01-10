@@ -1,0 +1,5 @@
+com.PersonalBlog
+com.PersonalBlog.models
+com.PersonalBlog.repositories
+com.PersonalBlog.services
+com.PersonalBlog.utils

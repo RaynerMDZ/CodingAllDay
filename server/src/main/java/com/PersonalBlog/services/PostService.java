@@ -128,6 +128,7 @@ public class PostService {
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="/getPost/{id}")
     public ResponseEntity getPostById(@PathVariable Long id) {
+
         Post post;
 
         try {

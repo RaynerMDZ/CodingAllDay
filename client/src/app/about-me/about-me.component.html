@@ -1,39 +1,62 @@
-<mdb-card>
+<mdb-card class="margins container">
   <!--Card image-->
-  <mdb-card-img [src]="profile.avatarImg" alt="Card image cap"></mdb-card-img>
+
   <!--Card content-->
   <mdb-card-body>
 
     <!--Title-->
     <mdb-card-title>
-      <h4>About Me</h4>
+      <h4 class="h4-margins">About Me</h4>
     </mdb-card-title>
 
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-6">
+
+        <div class="image-size">
+          <mdb-card-img [src]="profile.avatarImg" alt="Card image cap"></mdb-card-img>
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-6 ">
+
+        <!--<mdb-card-text>-->
+
+          <div class="bigger-text">
+
+            <div>
+              {{ profile.fistName }}
+              Rayner
+              {{ profile.lastName }}
+            </div>
+
+            <div></div>
+
+            <div>
+              {{ profile.bio }}
+            </div>
+
+            <div>
+              {{ profile.country }}
+            </div>
+
+            <div>
+              {{ profile.dateOfBirth }}
+            </div>
+
+            <div>
+              raynermendezg@outlook.com
+            </div>
+          </div>
+
+
+
+        <!--</mdb-card-text>-->
+
+      </div>
+    </div>
+
     <!--Text-->
-    <mdb-card-text>
 
-      <div>
-        {{ profile.fistName }}
-      </div>
-
-      <div>
-        {{ profile.lastName }}
-      </div>
-
-      <div>
-        {{ profile.bio }}
-      </div>
-
-      <div>
-        {{ profile.country }}
-      </div>
-
-      <div>
-        {{ profile.dateOfBirth }}
-      </div>
-      
-    </mdb-card-text>
-
-    <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
   </mdb-card-body>
 </mdb-card>

@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "c2696b93-ffd8-4602-a09e-4af01c4ad205",
+		"name": "CodingAllDay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\"\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/login",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\",\n\t\"title\": \"I AM FIRST ONE\",\n\t\"body\": \"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,\",\n\t\"featurePhoto\": \"https://mdbootstrap.com/img/Photos/Others/city10.jpg\"\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/createPost",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"createPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\",\n\t\"postId\": 29\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/deletePost",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"deletePost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\",\n\t\"post\": {\n\t\t\"id\": 3,\n\t\t\"title\": \"A Post NEWWWWWW\",\n\t\t\"body\": \"This is a post\",\n\t\t\"featurePhoto\": \"sdfwewgweg.img\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/editPost",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"editPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpoint}}/getPosts?limit=100&page=1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"getPosts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpoint}}/getPost/31",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"getPost",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"rayner\",\n\t\"body\": \"this is another comment\",\n\t\"id\": 31\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/createComment",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"createComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\",\n\t\"id\": 34\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/deleteComment",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"deleteComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"username\": \"RaynerM\",\n\t\"password\": \"1234\",\n\t\"newUsername\": \"RaynerMG\",\n\t\"newPassword\": \"1234\",\n\t\"admin\": 0\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/createUser",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"username\": \"Rayner\",\n\t\"password\": \"1234\",\n\t\"id\": 42\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/deleteUser",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"firstName\": \"Rayner\",\n\t\"lastName\": \"Mendez\",\n\t\"country\": \"USA\",\n\t\"avatarImg\": \"https://media.licdn.com/dms/image/C4D03AQGwEC3WgfxvEg/profile-displayphoto-shrink_200_200/0?e=1547683200&v=beta&t=4HWgAmzWf9Z52ao0c5Y36aHp89_l8TQdL39Cphc0ZBM\",\n\t\"dateOfBirth\": \"April 6th, 1995\",\n\t\"bio\": \"Aspiring Software Engineer. Quickly learn and master new technologies; successful working as part of a team and working independently.\"\n}"
+				},
+				"url": {
+					"raw": "{{endpoint}}/createProfile",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"createProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{endpoint}}/getProfile/58",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"getProfile",
+						"58"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bbac9ed3-65c4-45d8-b465-1082367e11f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b3d734cd-0eef-4b7d-af54-67632b97ae16",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8d550065-30fd-407c-b974-c4f2cd88ec51",
+			"key": "endpoint",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"RaynerMDZ\",\n\t\"password\": \"Rmendez06\"\n}"
+					"raw": "{\n\t\"username\": \"yourUsername\",\n\t\"password\": \"yourPassword\"\n}"
 				},
 				"url": {
 					"raw": "{{endpoint}}/login",

@@ -8,10 +8,10 @@ Java 8, TypeScript, HTML 5, CSS 3, SASS, Maven, Spring Boot 2.0, Spring Framewor
      alt="Calculator picture"
      style="float: center; margin-right: 10px; " />
      
-<img src="https://github.com/RaynerMDZ/CodingAllDay/blob/master/Screenshots/Screen%20Shot%202019-01-11%20at%202.38.37%20PM.png" height="720" width="1280"
+<img src="https://github.com/RaynerMDZ/CodingAllDay/blob/master/Screenshots/Screen%20Shot%202019-01-11%20at%202.38.37%20PM.png" height="100%" width="100%"
      alt="Calculator picture"
      style="float: center; margin-right: 10px; " />
      
-<img src="https://github.com/RaynerMDZ/CodingAllDay/blob/master/Screenshots/Screen%20Shot%202019-01-11%20at%202.37.19%20PM.png" height="720" width="1280"
+<img src="https://github.com/RaynerMDZ/CodingAllDay/blob/master/Screenshots/Screen%20Shot%202019-01-11%20at%202.37.19%20PM.png" height="100%" width="100%"
      alt="Calculator picture"
      style="float: center; margin-right: 10px; " />

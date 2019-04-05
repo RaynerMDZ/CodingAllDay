@@ -108,13 +108,19 @@ public class PostServiceImpl implements PostService {
      * @author RaynerMDZ
      */
     public Optional<Post> getPostById(Long id) {
-      Optional<Post> optionalPost = postRepository.findById(id);
 
-      if (optionalPost.isPresent()) {
-        return optionalPost;
+      try {
+        Optional<Post> optionalPost = postRepository.findById(id);
+
+        if (optionalPost.isPresent()) {
+          return optionalPost;
+        }
+        return Optional.empty();
+
+      } catch (Exception e) {
+        e.printStackTrace();
+        return Optional.empty();
       }
-
-      return Optional.empty();
     }
 
     /**

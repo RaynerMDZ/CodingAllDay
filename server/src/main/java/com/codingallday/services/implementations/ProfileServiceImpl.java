@@ -3,14 +3,10 @@ package com.codingallday.services.implementations;
 import com.codingallday.models.Profile;
 import com.codingallday.repositories.ProfileRepository;
 import com.codingallday.services.ProfileService;
-import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import java.util.Optional;
 
 /**
  * This class contains all restful services for Profile.
@@ -30,8 +26,7 @@ public class ProfileServiceImpl implements ProfileService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @PostMapping(value="/create-profile")
-    public ResponseEntity createProfile(@Valid @RequestBody ObjectNode objectNode) {
+    public Optional<Profile> createProfile(ObjectNode objectNode) {
 
         String avatarImg = objectNode.get("avatarImg").asText();
         String bio = objectNode.get("bio").asText();
@@ -42,19 +37,26 @@ public class ProfileServiceImpl implements ProfileService {
 
         Profile profile = new Profile();
 
-        profile.setProfilePicture(avatarImg);
-        profile.setBio(bio);
-        profile.setCountry(country);
-        profile.setDateOfBirth(dateOfBirth);
-        profile.setFirstName(firstName);
-        profile.setLastName(lastName);
-
         try {
-            profileRepository.save(profile);
-            return new ResponseEntity<>(Util.customMessage("Profile created", 200), HttpStatus.OK);
+            profile.setProfilePicture(avatarImg);
+            profile.setBio(bio);
+            profile.setCountry(country);
+            profile.setDateOfBirth(dateOfBirth);
+            profile.setFirstName(firstName);
+            profile.setLastName(lastName);
+
+            try {
+                Profile savedProfile = profileRepository.save(profile);
+                return Optional.of(savedProfile);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                Optional.empty();
+            }
         } catch (Exception e) {
-            return new ResponseEntity<>(Util.customMessage(e.getMessage(), 500), HttpStatus.INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
         }
+        return Optional.empty();
     }
 
     /**
@@ -63,22 +65,19 @@ public class ProfileServiceImpl implements ProfileService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @GetMapping(value="/get-profile/{id}")
-    public ResponseEntity getProfileById(@PathVariable Long id) {
-
-        Profile profile;
+    public Optional<Profile> getProfileById(Long id) {
 
         try {
+            Optional<Profile> optionalProfile = profileRepository.findById(id);
 
-            profile = profileRepository.findById(id).orElse(null);
+            if (optionalProfile.isPresent()) {
+                return optionalProfile;
+            }
+            return Optional.empty();
 
         } catch (Exception e) {
-            return new ResponseEntity<>(Util.customMessage(e.getMessage(), 500), HttpStatus.INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+            return Optional.empty();
         }
-
-        if (profile == null) {
-            return new ResponseEntity<>(Util.customMessage("This post cannot be found", 404), HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(profile, HttpStatus.OK);
     }
 }

@@ -4,10 +4,10 @@
     <mdb-card *ngFor="let post of posts" class="custom-margin custom-shadow">
 
 
-      <div *ngIf="post.featurePhoto !== 'null'" class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <div *ngIf="post.featuredPicture !== 'null'" class="view rgba-white-slight waves-light" mdbWavesEffect>
 
         <!-- Card img -->
-        <mdb-card-img [src]="post.featurePhoto" [alt]="post.title"></mdb-card-img>
+        <mdb-card-img [src]="post.featuredPicture" [alt]="post.title"></mdb-card-img>
 
         <a [routerLink]="['/post', post.id]">
           <div class="mask"></div>

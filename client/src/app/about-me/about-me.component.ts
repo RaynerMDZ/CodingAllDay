@@ -10,7 +10,7 @@ import {ApiService, Profile} from '../api-service.service';
 export class AboutMeComponent implements OnInit {
 
   public profile: Profile;
-  id = 58;
+  id = 1;
 
   constructor(private api: ApiService) { }
 

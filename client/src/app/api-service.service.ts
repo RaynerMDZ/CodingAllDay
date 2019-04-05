@@ -126,7 +126,7 @@ export interface Post {
   body: string;
   date: Date;
   comments: Comment[];
-  featurePhoto: string;
+  featuredPicture: string;
 };
 
 export interface Comment {
@@ -139,7 +139,7 @@ export interface Comment {
 export interface Profile {
   fistName: string;
   lastName: string;
-  avatarImg: string;
+  profilePicture: string;
   bio: string;
   dateOfBirth: string;
   country: string;

@@ -26,7 +26,7 @@ export class ApiService {
         id: id
       };
 
-      return this.http.post<any>(`${this.apiEndpoint}/deleteComment`, obj).toPromise();
+      return this.http.post<any>(`${this.apiEndpoint}/comments/delete-comment`, obj).toPromise();
 
     } catch (e) {
       console.log(e);
@@ -47,7 +47,7 @@ export class ApiService {
         postId: id
       };
 
-      return this.http.post<any>(`${this.apiEndpoint}/deletePost`, obj).toPromise();
+      return this.http.post<any>(`${this.apiEndpoint}/posts/delete-post`, obj).toPromise();
 
     } catch (e) {
       console.log(e);
@@ -63,7 +63,7 @@ export class ApiService {
       body: body
     };
 
-    return this.http.post<any>(`${this.apiEndpoint}/createComment`, obj).toPromise();
+    return this.http.post<any>(`${this.apiEndpoint}/comments/create-comment`, obj).toPromise();
   }
 
   public async createPost(title: string, body: string, featurePhoto: string): Promise<any> {
@@ -81,7 +81,7 @@ export class ApiService {
         featurePhoto: featurePhoto || null
       };
 
-      return this.http.post<any>(`${this.apiEndpoint}/createPost`, obj).toPromise();
+      return this.http.post<any>(`${this.apiEndpoint}/posts/create-post`, obj).toPromise();
 
     } catch (e) {
       console.log(e);
@@ -89,11 +89,11 @@ export class ApiService {
   }
 
   public getPost(id: number): Promise<Post> {
-    return this.http.get<Post>(`${this.apiEndpoint}/getPost/${id}`).toPromise();
+    return this.http.get<Post>(`${this.apiEndpoint}/posts/get-post/${id}`).toPromise();
   }
 
   public getPosts(limit: number = 10, page: number = 1): Promise<Array<Post>> {
-    return this.http.get<Array<Post>>(`${this.apiEndpoint}/getPosts?limit=${limit}&page=${page}`).toPromise();
+    return this.http.get<Array<Post>>(`${this.apiEndpoint}/posts/get-posts?limit=${limit}&page=${page}`).toPromise();
   }
 
   public doLogin(username: string, password: string): Promise<any> {
@@ -103,7 +103,7 @@ export class ApiService {
       password: password
     };
 
-    return this.http.post(`${this.apiEndpoint}/login`, credentials).toPromise();
+    return this.http.post(`${this.apiEndpoint}/users/login`, credentials).toPromise();
   }
 
   public doLogout(): Promise<boolean> {
@@ -116,7 +116,7 @@ export class ApiService {
   }
 
   public getProfile(id: number) {
-    return this.http.get<Profile>(`${this.apiEndpoint}/getProfile/${id}`).toPromise();
+    return this.http.get<Profile>(`${this.apiEndpoint}/profile/get-profile/${id}`).toPromise();
   }
 }
 

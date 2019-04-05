@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/login")
     public ResponseEntity login(@Valid @RequestBody User user) {
 
@@ -60,7 +59,7 @@ public class UserServiceImpl implements UserService {
      * @author RaynerMDZ
      */
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(value="/createUser")
+    @PostMapping(value="/create-user")
     public ResponseEntity createUser(@Valid @RequestBody ObjectNode objectNode) {
 
         String newUsername = objectNode.get("newUsername").asText();
@@ -101,8 +100,7 @@ public class UserServiceImpl implements UserService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping(value="/deleteUser")
+    @DeleteMapping(value="/delete-user")
     public ResponseEntity deleteUser(@Valid @RequestBody ObjectNode objectNode) {
 
         long id = objectNode.get("id").asLong();

@@ -7,7 +7,6 @@ import com.codingallday.services.PostService;
 import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -38,8 +37,7 @@ public class PostServiceImpl implements PostService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(value="/createPost")
+    @PostMapping(value="/create-post")
     public ResponseEntity createPost(@Valid @RequestBody ObjectNode objectNode) {
 
         Date date = new Date();

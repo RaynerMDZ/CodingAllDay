@@ -5,7 +5,6 @@ import com.codingallday.repositories.ProfileRepository;
 import com.codingallday.services.ProfileService;
 import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -31,8 +30,7 @@ public class ProfileServiceImpl implements ProfileService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(value="/createProfile")
+    @PostMapping(value="/create-profile")
     public ResponseEntity createProfile(@Valid @RequestBody ObjectNode objectNode) {
 
         String avatarImg = objectNode.get("avatarImg").asText();
@@ -65,8 +63,7 @@ public class ProfileServiceImpl implements ProfileService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value="/getProfile/{id}")
+    @GetMapping(value="/get-profile/{id}")
     public ResponseEntity getProfileById(@PathVariable Long id) {
 
         Profile profile;

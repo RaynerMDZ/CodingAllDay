@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Date;
 
-/**
- * This class contains all restful services Posts.
- */
 @Service
 public class PostServiceImpl implements PostService {
 
@@ -72,8 +69,7 @@ public class PostServiceImpl implements PostService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(value="/editPost")
+    @PostMapping(value="/edit-post")
     public ResponseEntity editPost(@Valid @RequestBody ObjectNode objectNode) {
 
         ObjectMapper mapper = new ObjectMapper();
@@ -100,8 +96,7 @@ public class PostServiceImpl implements PostService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(value="/deletePost")
+    @PostMapping(value="/delete-post")
     public ResponseEntity deletePost(@Valid @RequestBody ObjectNode objectNode) {
 
         long postId = objectNode.get("postId").asLong();
@@ -126,8 +121,7 @@ public class PostServiceImpl implements PostService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value="/getPost/{id}")
+    @GetMapping(value="/get-post/{id}")
     public ResponseEntity getPostById(@PathVariable Long id) {
 
         Post post;
@@ -151,8 +145,7 @@ public class PostServiceImpl implements PostService {
      * @return ResponseEntity
      * @author RaynerMDZ
      */
-    @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping(value="/getPosts")
+    @GetMapping(value="/get-posts")
     public ResponseEntity getAllPosts(@RequestParam("limit") int limit, @RequestParam("page") int page) {
 
         Iterable<Post> posts;

@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-/**
- * This class contains all restful services for users.
- */
 @Service
 public class UserServiceImpl implements UserService {
 

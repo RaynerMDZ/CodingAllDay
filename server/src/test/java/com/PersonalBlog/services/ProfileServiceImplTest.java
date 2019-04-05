@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ProfileServiceTest {
+public class ProfileServiceImplTest {
 
     @Test
     public void createProfile() {

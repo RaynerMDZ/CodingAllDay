@@ -3,6 +3,7 @@ package com.codingallday.services.implementations;
 import com.codingallday.models.Post;
 import com.codingallday.repositories.PostRepository;
 import com.codingallday.repositories.UserRepository;
+import com.codingallday.services.PostService;
 import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -21,13 +22,15 @@ import java.util.Date;
  * This class contains all restful services Posts.
  */
 @Service
-public class PostServiceImpl {
+public class PostServiceImpl implements PostService {
 
-    @Autowired
-    PostRepository postRepository;
+    private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    UserRepository userRepository;
+    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository) {
+        this.postRepository = postRepository;
+        this.userRepository = userRepository;
+    }
 
     /**
      * This method creates a post based on the data sent through the frontend.

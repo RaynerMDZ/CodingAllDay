@@ -3,10 +3,10 @@ package com.codingallday.services.implementations;
 import com.codingallday.enums.Roles;
 import com.codingallday.models.User;
 import com.codingallday.repositories.UserRepository;
+import com.codingallday.services.UserService;
 import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -18,10 +18,13 @@ import javax.validation.Valid;
  * This class contains all restful services for users.
  */
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /**
      * This method checks if a user exists in the database. If that user exits and the credentials sent in the frontend

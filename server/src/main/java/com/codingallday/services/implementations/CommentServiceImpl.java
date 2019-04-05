@@ -26,7 +26,6 @@ public class CommentServiceImpl implements CommentService {
         this.userRepository = userRepository;
     }
 
-
     public Optional<Comment> createComment(ObjectNode node) {
 
         Date date = new Date();

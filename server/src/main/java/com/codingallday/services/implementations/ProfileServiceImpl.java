@@ -2,6 +2,7 @@ package com.codingallday.services.implementations;
 
 import com.codingallday.models.Profile;
 import com.codingallday.repositories.ProfileRepository;
+import com.codingallday.services.ProfileService;
 import com.codingallday.utils.Util;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,13 @@ import javax.validation.Valid;
  * This class contains all restful services for Profile.
  */
 @Service
-public class ProfileServiceImpl {
+public class ProfileServiceImpl implements ProfileService {
 
-    @Autowired
-    ProfileRepository profileRepository;
+    private final ProfileRepository profileRepository;
+
+    public ProfileServiceImpl(ProfileRepository profileRepository) {
+        this.profileRepository = profileRepository;
+    }
 
     /**
      * This method creates a profile based on the data sent through the frontend.

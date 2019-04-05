@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,7 +21,7 @@ import static com.PersonalBlog.utils.Util.*;
 /**
  * This class contains all restful services Posts.
  */
-@RestController
+@Service
 public class PostServiceImpl {
 
     @Autowired

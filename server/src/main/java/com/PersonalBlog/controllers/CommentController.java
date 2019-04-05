@@ -1,19 +1,16 @@
 package com.PersonalBlog.controllers;
 
 import com.PersonalBlog.models.Comment;
-import com.PersonalBlog.models.Post;
 import com.PersonalBlog.services.CommentService;
-import com.PersonalBlog.services.PostService;
-import com.PersonalBlog.services.UserService;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Date;
 
-import static com.PersonalBlog.utils.Util.checkUser;
+import java.util.Optional;
+
 import static com.PersonalBlog.utils.Util.customMessage;
 
 @RestController
@@ -22,13 +19,9 @@ import static com.PersonalBlog.utils.Util.customMessage;
 public class CommentController {
 
   private final CommentService commentService;
-  private final PostService postService;
-  private final UserService userService;
 
-  public CommentController(CommentService commentService, PostService postService, UserService userService) {
+  public CommentController(CommentService commentService) {
     this.commentService = commentService;
-    this.postService = postService;
-    this.userService = userService;
   }
 
   /**
@@ -40,29 +33,16 @@ public class CommentController {
   @PostMapping(value="/create-comment")
   public ResponseEntity createComment(@Valid @RequestBody ObjectNode objectNode) {
 
-    Date date = new Date();
-    String name = objectNode.get("name").asText();
-    String body = objectNode.get("body").asText();
-    long id = objectNode.get("id").asLong();
+    try {
+      Optional<Comment> comment =commentService.createComment(objectNode);
 
-    Post post = postRepository.findById(id).orElse(null);
-
-    if (post != null) {
-      Comment comment = new Comment();
-
-      comment.setBody(body);
-      comment.setDate(date);
-      comment.setName(name);
-      comment.setPost(post);
-
-      try {
-        commentRepository.save(comment);
+      if (comment.isPresent()) {
         return new ResponseEntity<>(customMessage("Comment created", 200), HttpStatus.OK);
-
-      } catch (Exception e) {
-        e.printStackTrace();
-        return new ResponseEntity<>(customMessage(e.getMessage(), 500), HttpStatus.INTERNAL_SERVER_ERROR);
       }
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      return new ResponseEntity<>(customMessage(e.getMessage(), 500), HttpStatus.INTERNAL_SERVER_ERROR);
     }
     return new ResponseEntity<>(customMessage("This post does not exist.", 404), HttpStatus.NOT_FOUND);
   }
@@ -73,24 +53,19 @@ public class CommentController {
    * @return ResponseEntity
    * @author RaynerMDZ
    */
-  @CrossOrigin(origins = "http://localhost:4200")
-  @PostMapping(value="/deleteComment")
+  @PostMapping(value="/delete-comment")
   public ResponseEntity deleteComment(@Valid @RequestBody ObjectNode objectNode) {
 
-    // Id of the comment coming from the frontend api.
-    long commentId = objectNode.get("id").asLong();
-
-    if (checkUser(objectNode, userRepository) != -1) {
-
       try {
-        commentRepository.deleteById(commentId);
-        return new ResponseEntity<>(customMessage("Comment deleted", 200), HttpStatus.OK);
+        boolean isPresent = commentService.deleteComment(objectNode);
 
+        if (isPresent) {
+          return new ResponseEntity<>(customMessage("Comment deleted", 200), HttpStatus.OK);
+        }
       } catch (Exception e) {
         e.printStackTrace();
         return new ResponseEntity<>(customMessage(e.getMessage(), 500), HttpStatus.INTERNAL_SERVER_ERROR);
       }
+      return new ResponseEntity<>(customMessage("This comment does not exist.", 404), HttpStatus.NOT_FOUND);
     }
-    return new ResponseEntity<>(customMessage("This comment does not exist.", 404), HttpStatus.NOT_FOUND);
-  }
 }

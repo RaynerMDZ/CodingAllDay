@@ -11,7 +11,7 @@
 	<groupId>com.codingallday</groupId>
 	<artifactId>codingallday</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Coding All Day</name>
+	<name>Coding-All-Day</name>
 	<description>Platform by Per Scholas Final Project</description>
 
 	<properties>

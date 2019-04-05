@@ -1,5 +1,6 @@
 package com.PersonalBlog.services.implementations;
 
+import com.PersonalBlog.enums.Roles;
 import com.PersonalBlog.models.User;
 import com.PersonalBlog.repositories.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -71,12 +72,13 @@ public class UserServiceImpl {
 
         if (user != null) {
             if (userId != -1) {
-                if (user.getAdmin() == 1) {
+                //Change this logic to use as a Admin
+                if (admin == 1) {
 
                     User user1 = new User();
                     user1.setUsername(newUsername);
                     user1.setPassword(newPassword);
-                    user1.setAdmin((byte) admin);
+                    user1.setRole(Roles.ROLE_USER);
 
                     try {
                         userRepository.save(user1);
@@ -110,7 +112,8 @@ public class UserServiceImpl {
 
         if (user != null) {
             if (userId != -1) {
-                if (user.getAdmin() == 1) {
+                //Change this logic to use as a Admin
+                if (userId == 1) {
 
                     try {
                         userRepository.deleteById(id);

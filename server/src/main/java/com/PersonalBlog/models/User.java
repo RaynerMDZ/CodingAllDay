@@ -1,14 +1,17 @@
 package com.PersonalBlog.models;
 
+import com.PersonalBlog.enums.Roles;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class User {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    // Generates an id automatically.
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "username")
@@ -17,8 +20,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "admin")
-    private byte admin;
+    @Column(name = "role")
+    @Enumerated(value = EnumType.STRING)
+    private Roles role;
 
     public long getId() {
         return id;
@@ -44,11 +48,11 @@ public class User {
         this.password = password;
     }
 
-    public byte getAdmin() {
-        return admin;
+    public Roles getRole() {
+        return role;
     }
 
-    public void setAdmin(byte admin) {
-        this.admin = admin;
+    public void setRole(Roles role) {
+        this.role = role;
     }
 }

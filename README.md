@@ -5,8 +5,7 @@
 This project is done following Agile-Scrum methodology and Test Drive Development.
 Final project of Platform by Per Scholas. 
 "Coding All Day" is a blog where I can create posts about Computer Science. 
-Users of "Coding All Day" can comment on the posts. 
-This Web Application was created with Spring Boot 2.0 and Angular 7. 
+Users of "Coding All Day" can comment on the posts.
 
 #### Tech Stack:
 ###### Back-end:
